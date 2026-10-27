@@ -1,4 +1,4 @@
-# University Club Management System - simple version (Flask + SQLite)
+# University Club Management System 
 # Module 1: Registration & Login | Module 2: Membership Request & Coordinator Approval/Rejection
 import sqlite3
 from flask import Flask, request, redirect, session, render_template_string
