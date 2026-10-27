@@ -17,7 +17,6 @@ def query(sql, args=(), one=False, commit=False):
     if commit:
         con.commit()
     con.close()
-    
     return (rows[0] if rows else None) if one else rows
 
 
@@ -54,13 +53,13 @@ def show(body_template, msgs=(), **data):
     return render_template_string(PAGE, body=body, msgs=msgs)
 
 
-REGISTER_FORM = """<h3>Register</h3><form method="post">
+REGISTER_FORM = """<h3>Register</h3><form method="post" action="/register">
 Name<br><input name="name" value="{{ f.get('name','') }}"><br>
 Email<br><input name="email" value="{{ f.get('email','') }}"><br>
 Password (min 8 chars)<br><input type="password" name="password"><br><br>
 <button>Register</button></form>"""
 
-LOGIN_FORM = """<h3>Login</h3><form method="post">
+LOGIN_FORM = """<h3>Login</h3><form method="post" action="/login">
 Email<br><input name="email"><br>Password<br><input type="password" name="password"><br><br>
 <button>Login</button></form>"""
 
